@@ -1,0 +1,17 @@
+.row
+	margin: 0 -10px
+	+clr
+	&_flex
+		display: flex
+		.col 
+			display: flex
+			&_in
+				flex-grow: 1
+
+.col
+	float: left
+	padding: 10px
+	width: 100%
+	@for $i from 1 through 100
+		&_#{$i}
+			width: $i+%

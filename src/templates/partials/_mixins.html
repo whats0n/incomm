@@ -1,0 +1,39 @@
+{% macro icon(i, classList) %}
+<svg class="icon icon-{{i}} {{classList}}"><use xlink:href="img/sprite.svg#icon-{{i}}"></use></svg>
+{% endmacro %}
+
+{% macro group(props) %}
+	<div class="form-group {{props.classList}}">
+		<label for="{{props.id}}" class="label form-group__label">{{props.label | safe}}</label>
+		{% if props.select %}
+			<div class="form-group__field">
+				{{select(props.select)}}
+			</div>
+		{% endif %}
+		{% if props.input %}
+			<input type="text" class="input" id="{{props.id}}">
+		{% endif %}
+	</div>
+{% endmacro %}
+
+{% macro select(props) %}
+	<div class="select" data-select>
+		{{icon('down', 'select__arrow')}}
+		<div class="select__value" data-select-value>{{props.placeholder or props.options[0]}}</div>
+		<div class="select__dropdown" data-scrollbar>
+			<ul class="select__list">
+				{% for item in props.options %}
+					<li class="select__item {% if not props.placeholder and loop.first %}is-active{% endif %}" data-select-item>{{item}}</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+{% endmacro %}
+
+{% macro radio(props) %}
+	<label class="radio">
+		<input type="radio" class="radio__input" {{props.attrs | safe}}>
+		<span class="radio__icon"></span>
+		<span class="radio__label">{{props.label | safe}}</span>
+	</label>
+{% endmacro %}

@@ -1,0 +1,49 @@
+.radio
+	position: relative
+	display: inline-block
+	vertical-align: top
+	+clr
+	&__input
+		display: none
+		&:checked ~
+			.radio
+				&__icon
+					border-color: $blue
+					&:before
+						opacity: 1
+		&:disabled ~
+			.radio
+				&__icon,
+				&__label
+					opacity: 0.7
+					cursor: not-allowed
+	&__icon
+		position: relative
+		float: left
+		border: 1px solid $darkGray
+		border-radius: 50%
+		width: 20px
+		height: 20px
+		background: $white
+		cursor: pointer
+		transition: border-color 0.25s
+		&:before
+			content: ''
+			position: absolute
+			top: 50%
+			left: 50%
+			margin: -0.5em 0 0 -0.5em
+			border-radius: 50%
+			width: 1em
+			height: 1em
+			opacity: 0
+			background: $blue
+			font-size: 10px
+			transition: opacity 0.25s
+	&__label
+		display: block
+		overflow: hidden
+		padding-left: 10px
+		color: $darkGray
+		+f(18px, 600, 20px)
+		cursor: pointer

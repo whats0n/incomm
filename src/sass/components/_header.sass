@@ -1,0 +1,19 @@
+.header
+	padding: 10px 40px
+	color: $white
+	background: $blue
+	text-align: center
+	&__inner 
+		+clr
+	&__logo
+		float: left
+		font-size: 0
+		img 
+			height: 50px
+		~ .header__title
+			padding-left: 130px
+			padding-right: 130px
+	&__title
+		padding: 10px 0
+		+f(28px, 500, 30px)
+		text-transform: uppercase

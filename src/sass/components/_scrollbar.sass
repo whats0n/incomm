@@ -1,0 +1,14 @@
+//scrollbar
+[data-scrollbar]
+	&::-webkit-scrollbar
+		display: initial !important
+		&:vertical
+			width: 7px
+			background: linear-gradient(to right, transparent 3px, lighten($blue, 10%) 3px, lighten($blue, 10%) 4px, transparent 4px)
+		&:horizontal
+			height: 7px
+			background: linear-gradient(to bottom, transparent 3px, lighten($blue, 10%) 3px, lighten($blue, 10%) 4px, transparent 4px)
+	&::-webkit-scrollbar-thumb
+		background: $blue
+		+hover
+			background: darken($blue, 10%)
