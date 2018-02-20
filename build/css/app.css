@@ -939,7 +939,7 @@ body {
 .form-group_inline .form-group__field {
   -ms-flex-positive: 1;
   flex-grow: 1;
-  max-width: 100%;
+  width: 100%;
   min-width: 0;
 }
 

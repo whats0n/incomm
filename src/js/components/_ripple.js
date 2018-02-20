@@ -1,3 +1,14 @@
+(function(ELEMENT) {
+  ELEMENT.matches = ELEMENT.matches || ELEMENT.mozMatchesSelector || ELEMENT.msMatchesSelector || ELEMENT.oMatchesSelector || ELEMENT.webkitMatchesSelector;
+  ELEMENT.closest = ELEMENT.closest || function closest(selector) {
+    if (!this) return null;
+    if (this.matches(selector)) return this;
+    if (!this.parentElement) {return null;}
+    else return this.parentElement.closest(selector);
+  };
+}(Element.prototype));
+
+
 const isTouch = () => 'touchstart' in window;
 const eventName = isTouch() ? 'touchstart' : 'mousedown';
 const properties = [
@@ -48,9 +59,9 @@ const animation = (e, target) => {
 
   const duration = getDuration(circle);
 
-  const deleteCircle = setTimeout(() => circle.remove(), duration + 50);
+  const deleteCircle = setTimeout(() => target.removeChild(circle), duration + 50);
   const animationEnd = e => {
-    circle.remove();
+    target.removeChild(circle);
     clearTimeout(deleteCircle);
   };
 
