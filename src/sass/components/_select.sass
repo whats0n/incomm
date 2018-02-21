@@ -5,12 +5,7 @@
 		.select
 			&__arrow
 				transform: rotate(180deg)
-			&__dropdown
-				opacity: 1
-				visibility: visible
-				+gpu
-			&__value,
-			&__dropdown
+			&__value
 				border-color: $blue
 	&__arrow
 		position: absolute
@@ -47,8 +42,13 @@
 		opacity: 0
 		visibility: hidden
 		background: $white
-		transform: translate3d(0,15px,0)
 		transition: border-color 0.25s, opacity 0.3s, visibility 0.3s, transform 0.3s
+		&[data-position="true"]
+			margin-top: -10px
+		&.is-open
+			border-color: $blue
+			opacity: 1
+			visibility: visible
 	&__item
 		overflow: hidden
 		padding: 5px 15px

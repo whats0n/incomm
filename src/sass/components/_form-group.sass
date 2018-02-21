@@ -1,5 +1,8 @@
 .form-group
-	&_inline
+	+ .form-group
+		margin-top: 20px
+	&_inline,
+	&_table
 		display: flex
 		align-items: center
 		.form-group
@@ -7,7 +10,17 @@
 				padding-right: 15px
 			&__field
 				flex-grow: 1
-				width: 100%
 				min-width: 0
+	&_inlune
+		.form-group
+			&__field
+				width: 100%
+	&_table
+		.form-group
+			&__label 
+				flex-grow: 1
+				width: 30%
+			&__field
+				width: 60%
 	&__label
 		padding: 10px 0

@@ -13,16 +13,36 @@ title: Index page
 
 			{% set providerTypes = [
 				{
+					label: 'Topups',
+					name: 'provider-type'
+				},
+				{
+					label: 'Pins',
+					name: 'provider-type'
+				},
+				{
 					label: 'BillPay',
+					name: 'provider-type'
+				},
+				{
+					label: 'RPPS',
 					name: 'provider-type'
 				}
 			] %}
 			{% set providerFields = [
 				{
 					classList: 'form-group_table',
-					label: 'Account identifier',
-					id: 'account-id',
+					label: 'Phone number',
+					id: 'phone-number',
 					input: true
+				},
+				{
+					classList: 'form-group_table',
+					label: 'Country',
+					id: 'country',
+					select: {
+						options: [ 'United States', 'Ukraine', 'Russia', 'Belgium', 'Austria' ]
+					}
 				}
 			] %}
 			{% include 'partials/providerChooser/_boxes.html' %}

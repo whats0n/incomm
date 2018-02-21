@@ -1,0 +1,18 @@
+<div class="row row_flex">
+	<div class="col col_40">
+		<div class="box col_in">
+			{% for item in providerTypes %}
+				<div class="box__type">
+					{{mixins.radio(item)}}
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+	<div class="col col_60">
+		<div class="box col_in">
+			{% for item in providerFields %}
+				{{mixins.group(item)}}
+			{% endfor %}
+		</div>
+	</div>
+</div>

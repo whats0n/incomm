@@ -11,7 +11,9 @@
 			</div>
 		{% endif %}
 		{% if props.input %}
-			<input type="text" class="input" id="{{props.id}}">
+			<div class="form-group__field">
+				<input type="text" class="input" id="{{props.id}}">
+			</div>
 		{% endif %}
 	</div>
 {% endmacro %}
@@ -20,7 +22,7 @@
 	<div class="select" data-select>
 		{{icon('down', 'select__arrow')}}
 		<div class="select__value" data-select-value>{{props.placeholder or props.options[0]}}</div>
-		<div class="select__dropdown" data-scrollbar>
+		<div class="select__dropdown" data-select-dropdown data-scrollbar>
 			<ul class="select__list">
 				{% for item in props.options %}
 					<li class="select__item {% if not props.placeholder and loop.first %}is-active{% endif %}" data-select-item>{{item}}</li>
@@ -32,7 +34,7 @@
 
 {% macro radio(props) %}
 	<label class="radio">
-		<input type="radio" class="radio__input" {{props.attrs | safe}}>
+		<input type="radio" class="radio__input" name="{{props.name}}" {{props.attrs | safe}}>
 		<span class="radio__icon"></span>
 		<span class="radio__label">{{props.label | safe}}</span>
 	</label>
