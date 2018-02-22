@@ -1,0 +1,36 @@
+---
+title: Index page
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	
+	<div class="inner">
+		{% include 'partials/providerChooser/_heading.html' %}
+		<div class="section">
+			{% include 'partials/providerChooser/_description.html' %}
+			{% include 'partials/providerChooser/_provider.html' %}
+
+			{% set providerTypes = [
+				{
+					label: 'Topups',
+					name: 'provider-type'
+				},
+				{
+					label: 'Pins',
+					name: 'provider-type'
+				},
+				{
+					label: 'BillPay',
+					name: 'provider-type'
+				},
+				{
+					label: 'RPPS',
+					name: 'provider-type'
+				}
+			] %}
+			{% include 'partials/providerChooser/_boxes.html' %}
+		</div>
+	</div>
+
+{% endblock %}

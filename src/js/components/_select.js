@@ -57,6 +57,7 @@ selects.each((i, select) => {
 BODY.on('click', e => {
   if ($(e.target).closest(selects).length) return;
   selects.removeClass(ACTIVE);
+  $('[data-select-dropdown]').removeClass(OPEN);
 });
 
 selects.closest('[data-scrollbar]').on('scroll', e => watch.forEach(fn => fn()));

@@ -13,4 +13,8 @@
 		display: none
 	&:focus
 		border-color: $blue
+	&:disabled
+		border-color: lighten($darkGray, 50%)
+		background: lighten($darkGray, 70%)
+		cursor: not-allowed
 		

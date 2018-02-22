@@ -1,0 +1,50 @@
+.modal-content
+	display: flex
+	flex-direction: column
+	color: $darkGray
+	background: $white
+	box-shadow: 0 0 7px 2px rgba($black, 0.4)
+	+f(14px, 400, 1.4)
+	&__header
+		position: relative
+		padding: 15px 20px
+		color: $white
+		background: $blue
+	&__close
+		position: absolute
+		top: 0
+		right: 0
+		width: 60px
+		height: 60px
+		background: none
+		+vertical
+		transition: background 0.2s, box-shadow 0.2s
+		&:hover 
+			background: darken($blue, 10%)
+		&:active
+			background: darken($blue, 10%)
+			box-shadow: inset 2px 2px 6px rgba(0,0,0,.2)
+		~ .modal-content__title
+			padding-right: 60px
+		.icon 
+			display: inline-block
+			vertical-align: middle
+			fill: $white
+			font-size: 20px
+	&__title
+		+f(24px, 500, 30px)
+		text-align: left
+	&__footer
+		padding: 20px
+		border-top: 1px solid rgba($darkGray, 0.2)
+		font-size: 0
+		text-align: right
+		.btn + .btn
+			margin-left: 20px
+	&__body
+		overflow: auto
+		flex-grow: 1
+		padding: 40px 20px
+	.form-group
+		&__label
+			font-size: 18px

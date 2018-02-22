@@ -1,0 +1,25 @@
+---
+title: Index page
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+
+	{% set modals = [
+		{
+			id: 'account-data',
+			title: 'Account Data'
+		}
+	] %}
+	
+	<ul>
+		{% for item in modals %}
+			<li><a data-modal-target="{{item.id}}">{{item.title}}</a></li>
+		{% endfor %}
+	</ul>
+
+	{% for item in modals %}
+		{% include 'partials/modals/_' + item.id + '.html' %}
+	{% endfor %}
+
+{% endblock %}

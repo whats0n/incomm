@@ -9,4 +9,17 @@
 			}
 		})}}
 	</div>
+	{% if product %}
+		<div class="col col_60">
+			{{mixins.group({
+				classList: 'form-group_inline',
+				label: 'Product',
+				id: 'product',
+				select: {
+					placeholder: 'Please choose a product',
+					options: [ 'Product 1', 'Product 3', 'Product 2' ]
+				}
+			})}}
+		</div>
+	{% endif %}
 </div>

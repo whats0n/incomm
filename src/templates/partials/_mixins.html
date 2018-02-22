@@ -12,7 +12,7 @@
 		{% endif %}
 		{% if props.input %}
 			<div class="form-group__field">
-				<input type="text" class="input" id="{{props.id}}">
+				<input type="text" class="input" id="{{props.id}}" {{props.inputAttrs | safe}}>
 			</div>
 		{% endif %}
 	</div>
