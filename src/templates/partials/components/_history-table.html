@@ -1,0 +1,46 @@
+{% set table = {
+	columns: [
+		{ id: 'history-date', title: 'Date' },
+		{ id: 'history-brand', title: 'Brand' },
+		{ id: 'history-account-id', title: 'AccountID' },
+		{ id: 'history-code', title: 'Code' },
+		{ id: 'history-product-name', title: 'ProductName' },
+		{ id: 'history-payment', title: 'Payment' },
+		{ id: 'history-fee', title: 'Fee' },
+		{ id: 'history-amount', title: 'Amount' },
+		{ id: 'history-username', title: 'Username' },
+		{ id: 'history-confirmation-id', title: 'ConfirmationID' }
+	],
+	body: [
+		'02/07/2018',
+		'MetroPCS',
+		'2146946240',
+		'10175',
+		'Service Payment',
+		'168.00',
+		'3.00',
+		'171.00',
+		'Alena',
+		'QPAYPC9825152'
+	]
+} %}
+<!-- begin table -->
+<div class="table">
+	<div class="table__thead">
+		<div class="table__tr">
+			{% for item in table.columns %}
+				<div class="table__th" data-column="{{item.id}}">{{item.title}}</div>
+			{% endfor %}
+		</div>
+	</div>
+	<div class="table__tbody">
+		{% for item in range(0,9) %}
+			<div class="table__tr">
+				{% for item in table.body %}
+					<div class="table__td" data-column="{{table.columns[loop.index0].id}}">{{item}}</div>
+				{% endfor %}
+			</div>
+		{% endfor %}
+	</div>
+</div>
+<!-- end table -->

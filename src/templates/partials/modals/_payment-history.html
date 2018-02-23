@@ -1,0 +1,130 @@
+<div class="modal" data-modal="{{item.id}}">
+	<!-- begin modal-content -->
+	<div class="modal-content modal__container" data-modal-container>
+		<div class="modal-content__header">
+			<button class="modal-content__close" data-modal-close>
+				{{mixins.icon('close')}}
+			</button>
+			<h3 class="modal-content__title">Payment History</h3>
+		</div>
+		<div class="modal-content__body" data-scrollbar>
+			<div class="modal-content__body-in">
+				<div class="modal-content__date-form">
+					<label for="payment-history-from" class="label modal-content__subtitle">Please select period.</label>
+					<div class="date-form">
+						{% for item in [
+							{
+								label: 'From',
+								id: 'payment-history-from',
+								input: true
+							},
+							{
+								label: 'To',
+								id: 'payment-history-to',
+								input: true
+							}
+						] %}
+							<div class="date-form__col">
+								<label for="{{item.id}}" class="date-form__label">{{item.label}}</label>
+								<div class="date-form__field" data-datepicker>
+									<input type="text" class="input" id="{{item.id}}" data-datepicker-input>
+									<div class="datepicker" data-datepicker-container>
+										<div class="datepicker__inner">
+											<div class="datepicker__header">
+												<button class="datepicker__prev" type="button">
+													{{mixins.icon('left')}}
+												</button>
+												<button class="datepicker__next" type="button">
+													{{mixins.icon('right')}}
+												</button>
+												<div class="datepicker__title">February 2018</div>
+											</div>
+											<div class="datepicker__body">
+												<div class="datepicker__table">
+													<div class="datepicker__thead">
+														<div class="datepicker__tr">
+															{% for item in [ 'mon', 'tue', 'wed', 'thu', 'fri', 'sun', 'sat' ] %}
+																<div class="datepicker__th">{{item}}</div>
+															{% endfor %}
+														</div>
+													</div>
+													<div class="datepicker__tbody">
+														{% for week in [
+															[
+																{ number: '28', classList: 'is-neighboring' },
+																{ number: '29', classList: 'is-neighboring' },
+																{ number: '30', classList: 'is-neighboring' },
+																{ number: '31', classList: 'is-neighboring' },
+																{ number: '1', classList: '' },
+																{ number: '2', classList: 'is-weekend' },
+																{ number: '3', classList: 'is-weekend' }
+															],
+															[
+																{ number: '4', classList: '' },
+																{ number: '5', classList: '' },
+																{ number: '6', classList: '' },
+																{ number: '7', classList: '' },
+																{ number: '8', classList: '' },
+																{ number: '9', classList: 'is-weekend' },
+																{ number: '10', classList: 'is-weekend' }
+															],
+															[
+																{ number: '11', classList: '' },
+																{ number: '12', classList: '' },
+																{ number: '13', classList: '' },
+																{ number: '14', classList: '' },
+																{ number: '15', classList: '' },
+																{ number: '16', classList: 'is-weekend' },
+																{ number: '17', classList: 'is-weekend' }
+															],
+															[
+																{ number: '18', classList: '' },
+																{ number: '19', classList: '' },
+																{ number: '20', classList: '' },
+																{ number: '21', classList: '' },
+																{ number: '22', classList: 'is-active' },
+																{ number: '23', classList: 'is-weekend' },
+																{ number: '24', classList: 'is-weekend' }
+															],
+															[
+																{ number: '25', classList: '' },
+																{ number: '26', classList: '' },
+																{ number: '27', classList: '' },
+																{ number: '28', classList: '' },
+																{ number: '1', classList: 'is-neighboring' },
+																{ number: '2', classList: 'is-neighboring is-weekend' },
+																{ number: '3', classList: 'is-neighboring is-weekend' }
+															]
+														] %}
+															<div class="datepicker__tr">
+																{% for day in week %}
+																	<div class="datepicker__td">
+																		<a href="#" class="datepicker__day {{day.classList}}" data-datepicker-item="{{day.number}}/02/2018">{{day.number}}</a>
+																	</div>
+																{% endfor %}
+															</div>
+														{% endfor %}
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						{% endfor %}
+						<div class="date-form__submit">
+							<button class="btn" data-animation="ripple">Request</button>
+						</div>
+					</div>
+				</div>
+				<div class="modal-content__table" data-scrollbar>
+					{% include 'partials/components/_history-table.html' %}
+				</div>
+			</div>
+		</div>
+		<div class="modal-content__footer">
+			<button class="btn btn_red" data-animation="ripple">Close</button>
+		</div>
+	</div>
+	<!-- end modal-content -->
+</div>

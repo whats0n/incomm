@@ -1,0 +1,29 @@
+.table
+	display: table
+	table-layout: fixed
+	min-width: 100%
+	font-size: 14px
+	&__thead
+		display: table-header-group
+	&__tbody
+		display: table-row-group
+	&__tr 
+		display: table-row
+	&__th,
+	&__td 
+		display: table-cell
+		vertical-align: top
+		padding: 10px
+		text-align: center
+	&__th 
+		position: relative
+		color: $white
+		background: $blue
+		&:not(:first-child)
+			&:before
+				content: ''
+				position: absolute
+				top: 8px
+				left: -1px
+				bottom: 8px
+				border-left: 2px solid rgba($black, 0.1)

@@ -1,6 +1,4 @@
 .modal-content
-	display: flex
-	flex-direction: column
 	color: $darkGray
 	background: $white
 	box-shadow: 0 0 7px 2px rgba($black, 0.4)
@@ -37,14 +35,24 @@
 	&__footer
 		padding: 20px
 		border-top: 1px solid rgba($darkGray, 0.2)
+		// height: 101px
 		font-size: 0
 		text-align: right
 		.btn + .btn
 			margin-left: 20px
 	&__body
 		overflow: auto
-		flex-grow: 1
-		padding: 40px 20px
+		max-height: calc(100vh - 201px)
+		&-in
+			padding: 40px 20px
 	.form-group
 		&__label
 			font-size: 18px
+	&__subtitle 
+		margin-bottom: 10px
+		font-size: 22px
+		line-height: 1.2
+	&__date-form
+		margin-bottom: 20px
+	&__table
+		overflow: auto

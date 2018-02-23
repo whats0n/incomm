@@ -25,6 +25,7 @@
       <div class="container" data-scrollbar>
         <ul>
           <li><a data-modal-target="account-data">Account Data</a></li>
+          <li><a data-modal-target="payment-history">Payment History</a></li>
         </ul>
         <div class="modal modal_md" data-modal="account-data">
           <!-- begin modal-content -->
@@ -37,26 +38,343 @@
               <h3 class="modal-content__title">Account Data</h3>
             </div>
             <div class="modal-content__body" data-scrollbar>
-              <div class="form-group form-group_table"> <label for="brand" class="label form-group__label">Brand</label>
-                <div class="form-group__field"> <input type="text" class="input" id="brand" value="FPL" disabled> </div>
-              </div>
-              <div class="form-group form-group_table"> <label for="first-name" class="label form-group__label">First Name</label>
-                <div class="form-group__field"> <input type="text" class="input" id="first-name"> </div>
-              </div>
-              <div class="form-group form-group_table"> <label for="last-name" class="label form-group__label">Last Name</label>
-                <div class="form-group__field"> <input type="text" class="input" id="last-name"> </div>
-              </div>
-              <div class="form-group form-group_table"> <label for="account-nmbr" class="label form-group__label">Account Number</label>
-                <div class="form-group__field"> <input type="text" class="input" id="account-nmbr"> </div>
-              </div>
-              <div class="form-group form-group_table"> <label for="phone-nmbr" class="label form-group__label">Phone Number</label>
-                <div class="form-group__field"> <input type="text" class="input" id="phone-nmbr"> </div>
-              </div>
-              <div class="form-group form-group_table"> <label for="zip-code" class="label form-group__label">ZIP Code</label>
-                <div class="form-group__field"> <input type="text" class="input" id="zip-code"> </div>
+              <div class="modal-content__body-in">
+                <div class="form-group form-group_table"> <label for="brand" class="label form-group__label">Brand</label>
+                  <div class="form-group__field"> <input type="text" class="input" id="brand" value="FPL" disabled> </div>
+                </div>
+                <div class="form-group form-group_table"> <label for="first-name" class="label form-group__label">First Name</label>
+                  <div class="form-group__field"> <input type="text" class="input" id="first-name"> </div>
+                </div>
+                <div class="form-group form-group_table"> <label for="last-name" class="label form-group__label">Last Name</label>
+                  <div class="form-group__field"> <input type="text" class="input" id="last-name"> </div>
+                </div>
+                <div class="form-group form-group_table"> <label for="account-nmbr" class="label form-group__label">Account Number</label>
+                  <div class="form-group__field"> <input type="text" class="input" id="account-nmbr"> </div>
+                </div>
+                <div class="form-group form-group_table"> <label for="phone-nmbr" class="label form-group__label">Phone Number</label>
+                  <div class="form-group__field"> <input type="text" class="input" id="phone-nmbr"> </div>
+                </div>
+                <div class="form-group form-group_table"> <label for="zip-code" class="label form-group__label">ZIP Code</label>
+                  <div class="form-group__field"> <input type="text" class="input" id="zip-code"> </div>
+                </div>
               </div>
             </div>
             <div class="modal-content__footer"> <button class="btn btn_red" data-animation="ripple">Close</button> <button class="btn" data-animation="ripple">OK</button> </div>
+          </div>
+          <!-- end modal-content -->
+        </div>
+        <div class="modal" data-modal="payment-history">
+          <!-- begin modal-content -->
+          <div class="modal-content modal__container" data-modal-container>
+            <div class="modal-content__header"> <button class="modal-content__close" data-modal-close>
+				
+<svg class="icon icon-close "><use xlink:href="img/sprite.svg#icon-close"></use></svg>
+
+			</button>
+              <h3 class="modal-content__title">Payment History</h3>
+            </div>
+            <div class="modal-content__body" data-scrollbar>
+              <div class="modal-content__body-in">
+                <div class="modal-content__date-form"> <label for="payment-history-from" class="label modal-content__subtitle">Please select period.</label>
+                  <div class="date-form">
+                    <div class="date-form__col"> <label for="payment-history-from" class="date-form__label">From</label>
+                      <div class="date-form__field" data-datepicker> <input type="text" class="input" id="payment-history-from" data-datepicker-input>
+                        <div class="datepicker" data-datepicker-container>
+                          <div class="datepicker__inner">
+                            <div class="datepicker__header"> <button class="datepicker__prev" type="button">
+													
+<svg class="icon icon-left "><use xlink:href="img/sprite.svg#icon-left"></use></svg>
+
+												</button> <button class="datepicker__next" type="button">
+													
+<svg class="icon icon-right "><use xlink:href="img/sprite.svg#icon-right"></use></svg>
+
+												</button>
+                              <div class="datepicker__title">February 2018</div>
+                            </div>
+                            <div class="datepicker__body">
+                              <div class="datepicker__table">
+                                <div class="datepicker__thead">
+                                  <div class="datepicker__tr">
+                                    <div class="datepicker__th">mon</div>
+                                    <div class="datepicker__th">tue</div>
+                                    <div class="datepicker__th">wed</div>
+                                    <div class="datepicker__th">thu</div>
+                                    <div class="datepicker__th">fri</div>
+                                    <div class="datepicker__th">sun</div>
+                                    <div class="datepicker__th">sat</div>
+                                  </div>
+                                </div>
+                                <div class="datepicker__tbody">
+                                  <div class="datepicker__tr">
+                                    <div class="datepicker__td"> <a href="#" class="datepicker__day is-neighboring" data-datepicker-item="28/02/2018">28</a> </div>
+                                    <div class="datepicker__td"> <a href="#" class="datepicker__day is-neighboring" data-datepicker-item="29/02/2018">29</a> </div>
+                                    <div class="datepicker__td"> <a href="#" class="datepicker__day is-neighboring" data-datepicker-item="30/02/2018">30</a> </div>
+                                    <div class="datepicker__td"> <a href="#" class="datepicker__day is-neighboring" data-datepicker-item="31/02/2018">31</a> </div>
+                                    <div class="datepicker__td"> <a href="#" class="datepicker__day " data-datepicker-item="1/02/2018">1</a> </div>
+                                    <div class="datepicker__td"> <a href="#" class="datepicker__day is-weekend" data-datepicker-item="2/02/2018">2</a> </div>
+                                    <div class="datepicker__td"> <a href="#" class="datepicker__day is-weekend" data-datepicker-item="3/02/2018">3</a> </div>
+                                  </div>
+                                  <div class="datepicker__tr">
+                                    <div class="datepicker__td"> <a href="#" class="datepicker__day " data-datepicker-item="4/02/2018">4</a> </div>
+                                    <div class="datepicker__td"> <a href="#" class="datepicker__day " data-datepicker-item="5/02/2018">5</a> </div>
+                                    <div class="datepicker__td"> <a href="#" class="datepicker__day " data-datepicker-item="6/02/2018">6</a> </div>
+                                    <div class="datepicker__td"> <a href="#" class="datepicker__day " data-datepicker-item="7/02/2018">7</a> </div>
+                                    <div class="datepicker__td"> <a href="#" class="datepicker__day " data-datepicker-item="8/02/2018">8</a> </div>
+                                    <div class="datepicker__td"> <a href="#" class="datepicker__day is-weekend" data-datepicker-item="9/02/2018">9</a> </div>
+                                    <div class="datepicker__td"> <a href="#" class="datepicker__day is-weekend" data-datepicker-item="10/02/2018">10</a> </div>
+                                  </div>
+                                  <div class="datepicker__tr">
+                                    <div class="datepicker__td"> <a href="#" class="datepicker__day " data-datepicker-item="11/02/2018">11</a> </div>
+                                    <div class="datepicker__td"> <a href="#" class="datepicker__day " data-datepicker-item="12/02/2018">12</a> </div>
+                                    <div class="datepicker__td"> <a href="#" class="datepicker__day " data-datepicker-item="13/02/2018">13</a> </div>
+                                    <div class="datepicker__td"> <a href="#" class="datepicker__day " data-datepicker-item="14/02/2018">14</a> </div>
+                                    <div class="datepicker__td"> <a href="#" class="datepicker__day " data-datepicker-item="15/02/2018">15</a> </div>
+                                    <div class="datepicker__td"> <a href="#" class="datepicker__day is-weekend" data-datepicker-item="16/02/2018">16</a> </div>
+                                    <div class="datepicker__td"> <a href="#" class="datepicker__day is-weekend" data-datepicker-item="17/02/2018">17</a> </div>
+                                  </div>
+                                  <div class="datepicker__tr">
+                                    <div class="datepicker__td"> <a href="#" class="datepicker__day " data-datepicker-item="18/02/2018">18</a> </div>
+                                    <div class="datepicker__td"> <a href="#" class="datepicker__day " data-datepicker-item="19/02/2018">19</a> </div>
+                                    <div class="datepicker__td"> <a href="#" class="datepicker__day " data-datepicker-item="20/02/2018">20</a> </div>
+                                    <div class="datepicker__td"> <a href="#" class="datepicker__day " data-datepicker-item="21/02/2018">21</a> </div>
+                                    <div class="datepicker__td"> <a href="#" class="datepicker__day is-active" data-datepicker-item="22/02/2018">22</a> </div>
+                                    <div class="datepicker__td"> <a href="#" class="datepicker__day is-weekend" data-datepicker-item="23/02/2018">23</a> </div>
+                                    <div class="datepicker__td"> <a href="#" class="datepicker__day is-weekend" data-datepicker-item="24/02/2018">24</a> </div>
+                                  </div>
+                                  <div class="datepicker__tr">
+                                    <div class="datepicker__td"> <a href="#" class="datepicker__day " data-datepicker-item="25/02/2018">25</a> </div>
+                                    <div class="datepicker__td"> <a href="#" class="datepicker__day " data-datepicker-item="26/02/2018">26</a> </div>
+                                    <div class="datepicker__td"> <a href="#" class="datepicker__day " data-datepicker-item="27/02/2018">27</a> </div>
+                                    <div class="datepicker__td"> <a href="#" class="datepicker__day " data-datepicker-item="28/02/2018">28</a> </div>
+                                    <div class="datepicker__td"> <a href="#" class="datepicker__day is-neighboring" data-datepicker-item="1/02/2018">1</a> </div>
+                                    <div class="datepicker__td"> <a href="#" class="datepicker__day is-neighboring is-weekend" data-datepicker-item="2/02/2018">2</a> </div>
+                                    <div class="datepicker__td"> <a href="#" class="datepicker__day is-neighboring is-weekend" data-datepicker-item="3/02/2018">3</a> </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="date-form__col"> <label for="payment-history-to" class="date-form__label">To</label>
+                      <div class="date-form__field" data-datepicker> <input type="text" class="input" id="payment-history-to" data-datepicker-input>
+                        <div class="datepicker" data-datepicker-container>
+                          <div class="datepicker__inner">
+                            <div class="datepicker__header"> <button class="datepicker__prev" type="button">
+													
+<svg class="icon icon-left "><use xlink:href="img/sprite.svg#icon-left"></use></svg>
+
+												</button> <button class="datepicker__next" type="button">
+													
+<svg class="icon icon-right "><use xlink:href="img/sprite.svg#icon-right"></use></svg>
+
+												</button>
+                              <div class="datepicker__title">February 2018</div>
+                            </div>
+                            <div class="datepicker__body">
+                              <div class="datepicker__table">
+                                <div class="datepicker__thead">
+                                  <div class="datepicker__tr">
+                                    <div class="datepicker__th">mon</div>
+                                    <div class="datepicker__th">tue</div>
+                                    <div class="datepicker__th">wed</div>
+                                    <div class="datepicker__th">thu</div>
+                                    <div class="datepicker__th">fri</div>
+                                    <div class="datepicker__th">sun</div>
+                                    <div class="datepicker__th">sat</div>
+                                  </div>
+                                </div>
+                                <div class="datepicker__tbody">
+                                  <div class="datepicker__tr">
+                                    <div class="datepicker__td"> <a href="#" class="datepicker__day is-neighboring" data-datepicker-item="28/02/2018">28</a> </div>
+                                    <div class="datepicker__td"> <a href="#" class="datepicker__day is-neighboring" data-datepicker-item="29/02/2018">29</a> </div>
+                                    <div class="datepicker__td"> <a href="#" class="datepicker__day is-neighboring" data-datepicker-item="30/02/2018">30</a> </div>
+                                    <div class="datepicker__td"> <a href="#" class="datepicker__day is-neighboring" data-datepicker-item="31/02/2018">31</a> </div>
+                                    <div class="datepicker__td"> <a href="#" class="datepicker__day " data-datepicker-item="1/02/2018">1</a> </div>
+                                    <div class="datepicker__td"> <a href="#" class="datepicker__day is-weekend" data-datepicker-item="2/02/2018">2</a> </div>
+                                    <div class="datepicker__td"> <a href="#" class="datepicker__day is-weekend" data-datepicker-item="3/02/2018">3</a> </div>
+                                  </div>
+                                  <div class="datepicker__tr">
+                                    <div class="datepicker__td"> <a href="#" class="datepicker__day " data-datepicker-item="4/02/2018">4</a> </div>
+                                    <div class="datepicker__td"> <a href="#" class="datepicker__day " data-datepicker-item="5/02/2018">5</a> </div>
+                                    <div class="datepicker__td"> <a href="#" class="datepicker__day " data-datepicker-item="6/02/2018">6</a> </div>
+                                    <div class="datepicker__td"> <a href="#" class="datepicker__day " data-datepicker-item="7/02/2018">7</a> </div>
+                                    <div class="datepicker__td"> <a href="#" class="datepicker__day " data-datepicker-item="8/02/2018">8</a> </div>
+                                    <div class="datepicker__td"> <a href="#" class="datepicker__day is-weekend" data-datepicker-item="9/02/2018">9</a> </div>
+                                    <div class="datepicker__td"> <a href="#" class="datepicker__day is-weekend" data-datepicker-item="10/02/2018">10</a> </div>
+                                  </div>
+                                  <div class="datepicker__tr">
+                                    <div class="datepicker__td"> <a href="#" class="datepicker__day " data-datepicker-item="11/02/2018">11</a> </div>
+                                    <div class="datepicker__td"> <a href="#" class="datepicker__day " data-datepicker-item="12/02/2018">12</a> </div>
+                                    <div class="datepicker__td"> <a href="#" class="datepicker__day " data-datepicker-item="13/02/2018">13</a> </div>
+                                    <div class="datepicker__td"> <a href="#" class="datepicker__day " data-datepicker-item="14/02/2018">14</a> </div>
+                                    <div class="datepicker__td"> <a href="#" class="datepicker__day " data-datepicker-item="15/02/2018">15</a> </div>
+                                    <div class="datepicker__td"> <a href="#" class="datepicker__day is-weekend" data-datepicker-item="16/02/2018">16</a> </div>
+                                    <div class="datepicker__td"> <a href="#" class="datepicker__day is-weekend" data-datepicker-item="17/02/2018">17</a> </div>
+                                  </div>
+                                  <div class="datepicker__tr">
+                                    <div class="datepicker__td"> <a href="#" class="datepicker__day " data-datepicker-item="18/02/2018">18</a> </div>
+                                    <div class="datepicker__td"> <a href="#" class="datepicker__day " data-datepicker-item="19/02/2018">19</a> </div>
+                                    <div class="datepicker__td"> <a href="#" class="datepicker__day " data-datepicker-item="20/02/2018">20</a> </div>
+                                    <div class="datepicker__td"> <a href="#" class="datepicker__day " data-datepicker-item="21/02/2018">21</a> </div>
+                                    <div class="datepicker__td"> <a href="#" class="datepicker__day is-active" data-datepicker-item="22/02/2018">22</a> </div>
+                                    <div class="datepicker__td"> <a href="#" class="datepicker__day is-weekend" data-datepicker-item="23/02/2018">23</a> </div>
+                                    <div class="datepicker__td"> <a href="#" class="datepicker__day is-weekend" data-datepicker-item="24/02/2018">24</a> </div>
+                                  </div>
+                                  <div class="datepicker__tr">
+                                    <div class="datepicker__td"> <a href="#" class="datepicker__day " data-datepicker-item="25/02/2018">25</a> </div>
+                                    <div class="datepicker__td"> <a href="#" class="datepicker__day " data-datepicker-item="26/02/2018">26</a> </div>
+                                    <div class="datepicker__td"> <a href="#" class="datepicker__day " data-datepicker-item="27/02/2018">27</a> </div>
+                                    <div class="datepicker__td"> <a href="#" class="datepicker__day " data-datepicker-item="28/02/2018">28</a> </div>
+                                    <div class="datepicker__td"> <a href="#" class="datepicker__day is-neighboring" data-datepicker-item="1/02/2018">1</a> </div>
+                                    <div class="datepicker__td"> <a href="#" class="datepicker__day is-neighboring is-weekend" data-datepicker-item="2/02/2018">2</a> </div>
+                                    <div class="datepicker__td"> <a href="#" class="datepicker__day is-neighboring is-weekend" data-datepicker-item="3/02/2018">3</a> </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="date-form__submit"> <button class="btn" data-animation="ripple">Request</button> </div>
+                  </div>
+                </div>
+                <div class="modal-content__table" data-scrollbar>
+                  <!-- begin table -->
+                  <div class="table">
+                    <div class="table__thead">
+                      <div class="table__tr">
+                        <div class="table__th" data-column="history-date">Date</div>
+                        <div class="table__th" data-column="history-brand">Brand</div>
+                        <div class="table__th" data-column="history-account-id">AccountID</div>
+                        <div class="table__th" data-column="history-code">Code</div>
+                        <div class="table__th" data-column="history-product-name">ProductName</div>
+                        <div class="table__th" data-column="history-payment">Payment</div>
+                        <div class="table__th" data-column="history-fee">Fee</div>
+                        <div class="table__th" data-column="history-amount">Amount</div>
+                        <div class="table__th" data-column="history-username">Username</div>
+                        <div class="table__th" data-column="history-confirmation-id">ConfirmationID</div>
+                      </div>
+                    </div>
+                    <div class="table__tbody">
+                      <div class="table__tr">
+                        <div class="table__td" data-column="history-date">02/07/2018</div>
+                        <div class="table__td" data-column="history-brand">MetroPCS</div>
+                        <div class="table__td" data-column="history-account-id">2146946240</div>
+                        <div class="table__td" data-column="history-code">10175</div>
+                        <div class="table__td" data-column="history-product-name">Service Payment</div>
+                        <div class="table__td" data-column="history-payment">168.00</div>
+                        <div class="table__td" data-column="history-fee">3.00</div>
+                        <div class="table__td" data-column="history-amount">171.00</div>
+                        <div class="table__td" data-column="history-username">Alena</div>
+                        <div class="table__td" data-column="history-confirmation-id">QPAYPC9825152</div>
+                      </div>
+                      <div class="table__tr">
+                        <div class="table__td" data-column="history-date">02/07/2018</div>
+                        <div class="table__td" data-column="history-brand">MetroPCS</div>
+                        <div class="table__td" data-column="history-account-id">2146946240</div>
+                        <div class="table__td" data-column="history-code">10175</div>
+                        <div class="table__td" data-column="history-product-name">Service Payment</div>
+                        <div class="table__td" data-column="history-payment">168.00</div>
+                        <div class="table__td" data-column="history-fee">3.00</div>
+                        <div class="table__td" data-column="history-amount">171.00</div>
+                        <div class="table__td" data-column="history-username">Alena</div>
+                        <div class="table__td" data-column="history-confirmation-id">QPAYPC9825152</div>
+                      </div>
+                      <div class="table__tr">
+                        <div class="table__td" data-column="history-date">02/07/2018</div>
+                        <div class="table__td" data-column="history-brand">MetroPCS</div>
+                        <div class="table__td" data-column="history-account-id">2146946240</div>
+                        <div class="table__td" data-column="history-code">10175</div>
+                        <div class="table__td" data-column="history-product-name">Service Payment</div>
+                        <div class="table__td" data-column="history-payment">168.00</div>
+                        <div class="table__td" data-column="history-fee">3.00</div>
+                        <div class="table__td" data-column="history-amount">171.00</div>
+                        <div class="table__td" data-column="history-username">Alena</div>
+                        <div class="table__td" data-column="history-confirmation-id">QPAYPC9825152</div>
+                      </div>
+                      <div class="table__tr">
+                        <div class="table__td" data-column="history-date">02/07/2018</div>
+                        <div class="table__td" data-column="history-brand">MetroPCS</div>
+                        <div class="table__td" data-column="history-account-id">2146946240</div>
+                        <div class="table__td" data-column="history-code">10175</div>
+                        <div class="table__td" data-column="history-product-name">Service Payment</div>
+                        <div class="table__td" data-column="history-payment">168.00</div>
+                        <div class="table__td" data-column="history-fee">3.00</div>
+                        <div class="table__td" data-column="history-amount">171.00</div>
+                        <div class="table__td" data-column="history-username">Alena</div>
+                        <div class="table__td" data-column="history-confirmation-id">QPAYPC9825152</div>
+                      </div>
+                      <div class="table__tr">
+                        <div class="table__td" data-column="history-date">02/07/2018</div>
+                        <div class="table__td" data-column="history-brand">MetroPCS</div>
+                        <div class="table__td" data-column="history-account-id">2146946240</div>
+                        <div class="table__td" data-column="history-code">10175</div>
+                        <div class="table__td" data-column="history-product-name">Service Payment</div>
+                        <div class="table__td" data-column="history-payment">168.00</div>
+                        <div class="table__td" data-column="history-fee">3.00</div>
+                        <div class="table__td" data-column="history-amount">171.00</div>
+                        <div class="table__td" data-column="history-username">Alena</div>
+                        <div class="table__td" data-column="history-confirmation-id">QPAYPC9825152</div>
+                      </div>
+                      <div class="table__tr">
+                        <div class="table__td" data-column="history-date">02/07/2018</div>
+                        <div class="table__td" data-column="history-brand">MetroPCS</div>
+                        <div class="table__td" data-column="history-account-id">2146946240</div>
+                        <div class="table__td" data-column="history-code">10175</div>
+                        <div class="table__td" data-column="history-product-name">Service Payment</div>
+                        <div class="table__td" data-column="history-payment">168.00</div>
+                        <div class="table__td" data-column="history-fee">3.00</div>
+                        <div class="table__td" data-column="history-amount">171.00</div>
+                        <div class="table__td" data-column="history-username">Alena</div>
+                        <div class="table__td" data-column="history-confirmation-id">QPAYPC9825152</div>
+                      </div>
+                      <div class="table__tr">
+                        <div class="table__td" data-column="history-date">02/07/2018</div>
+                        <div class="table__td" data-column="history-brand">MetroPCS</div>
+                        <div class="table__td" data-column="history-account-id">2146946240</div>
+                        <div class="table__td" data-column="history-code">10175</div>
+                        <div class="table__td" data-column="history-product-name">Service Payment</div>
+                        <div class="table__td" data-column="history-payment">168.00</div>
+                        <div class="table__td" data-column="history-fee">3.00</div>
+                        <div class="table__td" data-column="history-amount">171.00</div>
+                        <div class="table__td" data-column="history-username">Alena</div>
+                        <div class="table__td" data-column="history-confirmation-id">QPAYPC9825152</div>
+                      </div>
+                      <div class="table__tr">
+                        <div class="table__td" data-column="history-date">02/07/2018</div>
+                        <div class="table__td" data-column="history-brand">MetroPCS</div>
+                        <div class="table__td" data-column="history-account-id">2146946240</div>
+                        <div class="table__td" data-column="history-code">10175</div>
+                        <div class="table__td" data-column="history-product-name">Service Payment</div>
+                        <div class="table__td" data-column="history-payment">168.00</div>
+                        <div class="table__td" data-column="history-fee">3.00</div>
+                        <div class="table__td" data-column="history-amount">171.00</div>
+                        <div class="table__td" data-column="history-username">Alena</div>
+                        <div class="table__td" data-column="history-confirmation-id">QPAYPC9825152</div>
+                      </div>
+                      <div class="table__tr">
+                        <div class="table__td" data-column="history-date">02/07/2018</div>
+                        <div class="table__td" data-column="history-brand">MetroPCS</div>
+                        <div class="table__td" data-column="history-account-id">2146946240</div>
+                        <div class="table__td" data-column="history-code">10175</div>
+                        <div class="table__td" data-column="history-product-name">Service Payment</div>
+                        <div class="table__td" data-column="history-payment">168.00</div>
+                        <div class="table__td" data-column="history-fee">3.00</div>
+                        <div class="table__td" data-column="history-amount">171.00</div>
+                        <div class="table__td" data-column="history-username">Alena</div>
+                        <div class="table__td" data-column="history-confirmation-id">QPAYPC9825152</div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- end table -->
+                </div>
+              </div>
+            </div>
+            <div class="modal-content__footer"> <button class="btn btn_red" data-animation="ripple">Close</button> </div>
           </div>
           <!-- end modal-content -->
         </div>
