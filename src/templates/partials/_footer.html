@@ -1,8 +1,18 @@
 <!-- begin footer -->
 <footer class="footer">
 	<div class="footer__inner">
-		<button class="btn footer__prev" data-animation="ripple">{{footerPrev or 'Payment History'}}</button>
-		<button class="btn footer__next" data-animation="ripple">{{footerNext or 'Next'}}{{mixins.icon('right')}}</button>
+		<div class="footer__left">
+			<button class="btn" data-animation="ripple">{{footerPrev or 'Payment History'}}</button>
+		</div>
+		<div class="footer__right">
+			{% if footerBack %}
+				<button class="btn btn_red" data-animation="ripple">{{mixins.icon('left')}}Back</button>
+			{% endif %}
+			<button class="btn" data-animation="ripple">{{footerNext or 'Next'}}{{mixins.icon('right')}}</button>
+			{% if footerCancel %}
+				<button class="btn btn_red" data-animation="ripple">Cancel</button>
+			{% endif %}
+		</div>
 	</div>
 </footer>
 <!-- end footer -->

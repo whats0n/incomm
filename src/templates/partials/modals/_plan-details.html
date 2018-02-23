@@ -1,0 +1,37 @@
+<div class="modal modal_md" data-modal="{{item.id}}">
+	<!-- begin modal-content -->
+	<div class="modal-content modal__container" data-modal-container>
+		<div class="modal-content__header">
+			<button class="modal-content__close" data-modal-close>
+				{{mixins.icon('close')}}
+			</button>
+			<h3 class="modal-content__title">Plan Details</h3>
+		</div>
+		<div class="modal-content__body" data-scrollbar>
+			<div class="modal-content__body-in">
+				<ul class="details">
+					{% for item in [
+						{ label: 'Account Type', value: 'Regular' },
+						{ label: 'Monthly Payment Account', value: '45' },
+						{ label: 'Price Plan', value: '$45 Tax Inclusive Plan, MetroGUARD' },
+						{ label: 'First Name', value: 'TEST' },
+						{ label: 'Last Name', value: 'SOASUB' },
+						{ label: 'Phone E S N', value: '999888765119963' },
+						{ label: 'Phone Type', value: '' },
+						{ label: 'Billing Cycle Reset Text', value: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo dolore vero quod possimus pariatur accusantium architecto ut at dolor commodi quam eligendi cum est, eum libero similique enim neque repellat quidem consectetur nihil. Culpa vero laborum accusantium aspernatur fugiat non.' }
+					] %}
+						<li class="details__item">
+							<div class="details__label">{{item.label | safe}}</div>
+							<div class="details__value">{{item.value | safe}}</div>
+						</li>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+		<div class="modal-content__footer">
+			<button class="btn btn_red" data-animation="ripple">Close</button>
+			<button class="btn" data-animation="ripple">OK</button>
+		</div>
+	</div>
+	<!-- end modal-content -->
+</div>

@@ -1,0 +1,83 @@
+---
+title: Index page
+headerTitle: Lookup results & payments
+footerBack: true
+footerCancel: true
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+
+	{% set customerInfo = [
+		{ label: 'Account Number', value: '613410674' },
+		{ label: 'Phone Number', value: '2146641470' },
+		{ label: 'Customer Name', value: 'TEST SOASUB' },
+		{ label: 'Current Balance', value: '0.00' },
+		{ label: 'Past Due Balance', value: '0.00' },
+		{ label: 'Due Date', value: '12/21/2016' },
+		{ label: 'Last Payment Date', value: '1/1/0001' },
+		{ label: 'Past Payment Account', value: '0.00' },
+		{ label: 'Can Create Customer Account', value: 'false' },
+		{ label: 'Subscribers', value: '' },
+		{ label: 'Provider Id', value: '10113' },
+		{ label: 'Provider Name', value: 'MetroPCS' },
+		{ label: 'Tag Index', value: 'MonthlyService' },
+		{ label: '<a href="#">Plan Details</a>', value: '' }
+	] %}
+
+	{% set paymentInformation = {
+		fields: [
+			{
+				classList: 'form-group_table',
+				label: 'Service Payment&nbsp;$',
+				id: 'service-payment',
+				input: true
+			},
+			{
+				classList: 'form-group_table',
+				label: 'Fee Amount $',
+				id: 'fee-amount',
+				input: true,
+				inputAttrs: 'value="3.00" disabled'
+			}
+		],
+		link: 'Check upgrade eligibility'
+	} %}
+	
+	<div class="inner">
+		{% include 'partials/providerChooser/_heading.html' %}
+		<div class="section">
+			<div class="row row_flex">
+				<div class="col col_50">
+					<div class="sm-info col_in">
+						<div class="sm-info__title">Customer inforamtion</div>
+						<div class="sm-info__box">
+							<ul class="details">
+								{% for item in customerInfo %}
+									<li class="details__item">
+										<div class="details__label">{{item.label | safe}}</div>
+										<div class="details__value">{{item.value | safe}}</div>
+									</li>
+								{% endfor %}
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="col col_50">
+					<div class="sm-info col_in">
+						<div class="sm-info__title">Payment information</div>
+						<div class="sm-info__box">
+							{% for item in paymentInformation.fields %}
+								{{mixins.group(item)}}
+							{% endfor %}
+							<div class="sm-info__link text-right">
+								<a href="#">{{paymentInformation.link}}</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

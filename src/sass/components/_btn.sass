@@ -21,11 +21,14 @@
 	&:hover
 		.icon-right
 			transform: translate3d(50%,0,0)
+		.icon-left
+			transform: translate3d(-50%,0,0)
 	&_red
 		background: #ec4a41
 		&:active
 			background: darken(#ec4a41, 10%)
-	.icon-right
+	.icon-right,
+	.icon-left
 		display: inline-block
 		vertical-align: top
 		fill: currentColor

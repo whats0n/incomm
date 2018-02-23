@@ -26,6 +26,7 @@
         <ul>
           <li><a data-modal-target="account-data">Account Data</a></li>
           <li><a data-modal-target="payment-history">Payment History</a></li>
+          <li><a data-modal-target="plan-details">Plan Details</a></li>
         </ul>
         <div class="modal modal_md" data-modal="account-data">
           <!-- begin modal-content -->
@@ -378,12 +379,68 @@
           </div>
           <!-- end modal-content -->
         </div>
+        <div class="modal modal_md" data-modal="plan-details">
+          <!-- begin modal-content -->
+          <div class="modal-content modal__container" data-modal-container>
+            <div class="modal-content__header"> <button class="modal-content__close" data-modal-close>
+				
+<svg class="icon icon-close "><use xlink:href="img/sprite.svg#icon-close"></use></svg>
+
+			</button>
+              <h3 class="modal-content__title">Plan Details</h3>
+            </div>
+            <div class="modal-content__body" data-scrollbar>
+              <div class="modal-content__body-in">
+                <ul class="details">
+                  <li class="details__item">
+                    <div class="details__label">Account Type</div>
+                    <div class="details__value">Regular</div>
+                  </li>
+                  <li class="details__item">
+                    <div class="details__label">Monthly Payment Account</div>
+                    <div class="details__value">45</div>
+                  </li>
+                  <li class="details__item">
+                    <div class="details__label">Price Plan</div>
+                    <div class="details__value">$45 Tax Inclusive Plan, MetroGUARD</div>
+                  </li>
+                  <li class="details__item">
+                    <div class="details__label">First Name</div>
+                    <div class="details__value">TEST</div>
+                  </li>
+                  <li class="details__item">
+                    <div class="details__label">Last Name</div>
+                    <div class="details__value">SOASUB</div>
+                  </li>
+                  <li class="details__item">
+                    <div class="details__label">Phone E S N</div>
+                    <div class="details__value">999888765119963</div>
+                  </li>
+                  <li class="details__item">
+                    <div class="details__label">Phone Type</div>
+                    <div class="details__value"></div>
+                  </li>
+                  <li class="details__item">
+                    <div class="details__label">Billing Cycle Reset Text</div>
+                    <div class="details__value">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo dolore vero quod possimus pariatur accusantium architecto ut at dolor commodi quam eligendi cum est, eum libero similique enim neque repellat quidem consectetur nihil. Culpa
+                      vero laborum accusantium aspernatur fugiat non.</div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="modal-content__footer"> <button class="btn btn_red" data-animation="ripple">Close</button> <button class="btn" data-animation="ripple">OK</button> </div>
+          </div>
+          <!-- end modal-content -->
+        </div>
       </div>
       <!-- begin footer -->
       <footer class="footer">
-        <div class="footer__inner"> <button class="btn footer__prev" data-animation="ripple">Payment History</button> <button class="btn footer__next" data-animation="ripple">Next
+        <div class="footer__inner">
+          <div class="footer__left"> <button class="btn" data-animation="ripple">Payment History</button> </div>
+          <div class="footer__right"> <button class="btn" data-animation="ripple">Next
 <svg class="icon icon-right "><use xlink:href="img/sprite.svg#icon-right"></use></svg>
 </button> </div>
+        </div>
       </footer>
       <!-- end footer -->
     </div>
