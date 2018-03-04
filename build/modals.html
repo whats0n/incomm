@@ -27,6 +27,8 @@
           <li><a data-modal-target="account-data">Account Data</a></li>
           <li><a data-modal-target="payment-history">Payment History</a></li>
           <li><a data-modal-target="plan-details">Plan Details</a></li>
+          <li><a data-modal-target="account-data-small">Account Data (small)</a></li>
+          <li><a data-modal-target="error-message">Error from incomm</a></li>
         </ul>
         <div class="modal modal_md" data-modal="account-data">
           <!-- begin modal-content -->
@@ -41,22 +43,34 @@
             <div class="modal-content__body" data-scrollbar>
               <div class="modal-content__body-in">
                 <div class="form-group form-group_table"> <label for="brand" class="label form-group__label">Brand</label>
-                  <div class="form-group__field"> <input type="text" class="input" id="brand" value="FPL" disabled> </div>
+                  <div class="form-group__field"> <input type="text" class="input " id="brand" value="FPL" disabled>
+                    <div class="error-message form-group__error-message">Lorem ipsum dolor sit amet.</div>
+                  </div>
                 </div>
                 <div class="form-group form-group_table"> <label for="first-name" class="label form-group__label">First Name</label>
-                  <div class="form-group__field"> <input type="text" class="input" id="first-name"> </div>
+                  <div class="form-group__field"> <input type="text" class="input " id="first-name">
+                    <div class="error-message form-group__error-message">Lorem ipsum dolor sit amet.</div>
+                  </div>
                 </div>
                 <div class="form-group form-group_table"> <label for="last-name" class="label form-group__label">Last Name</label>
-                  <div class="form-group__field"> <input type="text" class="input" id="last-name"> </div>
+                  <div class="form-group__field"> <input type="text" class="input " id="last-name">
+                    <div class="error-message form-group__error-message">Lorem ipsum dolor sit amet.</div>
+                  </div>
                 </div>
                 <div class="form-group form-group_table"> <label for="account-nmbr" class="label form-group__label">Account Number</label>
-                  <div class="form-group__field"> <input type="text" class="input" id="account-nmbr"> </div>
+                  <div class="form-group__field"> <input type="text" class="input " id="account-nmbr">
+                    <div class="error-message form-group__error-message">Lorem ipsum dolor sit amet.</div>
+                  </div>
                 </div>
                 <div class="form-group form-group_table"> <label for="phone-nmbr" class="label form-group__label">Phone Number</label>
-                  <div class="form-group__field"> <input type="text" class="input" id="phone-nmbr"> </div>
+                  <div class="form-group__field"> <input type="text" class="input " id="phone-nmbr">
+                    <div class="error-message form-group__error-message">Lorem ipsum dolor sit amet.</div>
+                  </div>
                 </div>
                 <div class="form-group form-group_table"> <label for="zip-code" class="label form-group__label">ZIP Code</label>
-                  <div class="form-group__field"> <input type="text" class="input" id="zip-code"> </div>
+                  <div class="form-group__field"> <input type="text" class="input " id="zip-code">
+                    <div class="error-message form-group__error-message">Lorem ipsum dolor sit amet.</div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -429,6 +443,64 @@
               </div>
             </div>
             <div class="modal-content__footer"> <button class="btn btn_red" data-animation="ripple">Close</button> <button class="btn" data-animation="ripple">OK</button> </div>
+          </div>
+          <!-- end modal-content -->
+        </div>
+        <div class="modal modal_md" data-modal="account-data-small">
+          <!-- begin modal-content -->
+          <div class="modal-content modal__container" data-modal-container>
+            <div class="modal-content__header"> <button class="modal-content__close" data-modal-close>
+				
+<svg class="icon icon-close "><use xlink:href="img/sprite.svg#icon-close"></use></svg>
+
+			</button>
+              <h3 class="modal-content__title">Account Data</h3>
+            </div>
+            <div class="modal-content__body" data-scrollbar>
+              <div class="modal-content__body-in">
+                <div class="form-group form-group_table"> <label for="first-name" class="label form-group__label">First Name</label>
+                  <div class="form-group__field"> <input type="text" class="input " id="first-name">
+                    <div class="error-message form-group__error-message">Lorem ipsum dolor sit amet.</div>
+                  </div>
+                </div>
+                <div class="form-group form-group_table"> <label for="last-name" class="label form-group__label">Last Name</label>
+                  <div class="form-group__field"> <input type="text" class="input " id="last-name">
+                    <div class="error-message form-group__error-message">Lorem ipsum dolor sit amet.</div>
+                  </div>
+                </div>
+                <div class="form-group form-group_table">
+                  <div class="form-group__delete"> <button class="btn-delete" type="button">
+					
+<svg class="icon icon-close "><use xlink:href="img/sprite.svg#icon-close"></use></svg>
+
+				</button> </div> <label for="phone-nmbr" class="label form-group__label">Phone Number</label>
+                  <div class="form-group__field"> <input type="text" class="input " id="phone-nmbr" value="1234567890">
+                    <div class="error-message form-group__error-message">Lorem ipsum dolor sit amet.</div>
+                  </div>
+                </div>
+                <div class="add-item"> <a href="#" class="add-item__link">Add Phone Number</a> </div>
+              </div>
+            </div>
+            <div class="modal-content__footer"> <button class="btn btn_red" data-animation="ripple">Close</button> <button class="btn" data-animation="ripple">OK</button> </div>
+          </div>
+          <!-- end modal-content -->
+        </div>
+        <div class="modal modal_sm" data-modal="error-message">
+          <!-- begin modal-content -->
+          <div class="modal-content modal__container" data-modal-container>
+            <div class="modal-content__header"> <button class="modal-content__close" data-modal-close>
+				
+<svg class="icon icon-close "><use xlink:href="img/sprite.svg#icon-close"></use></svg>
+
+			</button>
+              <h3 class="modal-content__title">Message from webpage</h3>
+            </div>
+            <div class="modal-content__body" data-scrollbar>
+              <div class="alert"> <svg class="icon icon-attention alert__icon"><use xlink:href="img/sprite.svg#icon-attention"></use></svg>
+                <p>Creation of the product faild.</p>
+              </div>
+            </div>
+            <div class="modal-content__footer"> <button class="btn" data-animation="ripple">OK</button> </div>
           </div>
           <!-- end modal-content -->
         </div>

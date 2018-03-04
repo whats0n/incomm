@@ -15,6 +15,12 @@
 		border-color: $blue
 	&:disabled
 		border-color: lighten($darkGray, 50%)
-		background: lighten($darkGray, 70%)
+		background: lighten($darkGray, 75%)
 		cursor: not-allowed
-		
+	&.is-error
+		border-color: $red
+		~ .error-message
+			opacity: 1
+			visibility: visible
+	&_sm 
+		height: 40px

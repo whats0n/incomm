@@ -9,19 +9,13 @@ footerCancel: true
 {% block content %}
 
 	{% set customerInfo = [
-		{ label: 'Account Number', value: '613410674' },
-		{ label: 'Phone Number', value: '2146641470' },
-		{ label: 'Customer Name', value: 'TEST SOASUB' },
-		{ label: 'Current Balance', value: '0.00' },
-		{ label: 'Past Due Balance', value: '0.00' },
-		{ label: 'Due Date', value: '12/21/2016' },
-		{ label: 'Last Payment Date', value: '1/1/0001' },
-		{ label: 'Past Payment Account', value: '0.00' },
-		{ label: 'Can Create Customer Account', value: 'false' },
-		{ label: 'Subscribers', value: '' },
-		{ label: 'Provider Id', value: '10113' },
-		{ label: 'Provider Name', value: 'MetroPCS' },
-		{ label: 'Tag Index', value: 'MonthlyService' },
+		{ label: 'Customer Name', value: '' },
+		{ label: 'Account Number', value: '534182937' },
+		{ label: 'Phone Number', value: '1234567890' },
+		{ label: 'Current Balance', value: '10.00' },
+		{ label: 'Is Eligible For Promo', value: 'false' },
+		{ label: 'Provider Id', value: '10102' },
+		{ label: 'Provider Name', value: 'MyStar123 Gold' },
 		{ label: '<a href="#">Plan Details</a>', value: '' }
 	] %}
 
@@ -29,16 +23,19 @@ footerCancel: true
 		fields: [
 			{
 				classList: 'form-group_table',
-				label: 'Service Payment&nbsp;$',
-				id: 'service-payment',
-				input: true
+				label: 'MyStar123 Gold Payment&nbsp;-&nbsp;Reload&nbsp;$',
+				id: 'payment-reload',
+				input: true,
+				inputAttrs: 'value="0.00"',
+				inputClassList: 'is-error',
+				errorMessage: '* Maximum value is 100'
 			},
 			{
 				classList: 'form-group_table',
 				label: 'Fee Amount $',
 				id: 'fee-amount',
 				input: true,
-				inputAttrs: 'value="3.00" disabled'
+				inputAttrs: 'value="0.00" disabled'
 			}
 		],
 		link: 'Check upgrade eligibility'
@@ -60,6 +57,9 @@ footerCancel: true
 									</li>
 								{% endfor %}
 							</ul>
+							<div class="sm-info__link sm-info__link_gap">
+								<a href="#">Update Account</a>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -70,9 +70,6 @@ footerCancel: true
 							{% for item in paymentInformation.fields %}
 								{{mixins.group(item)}}
 							{% endfor %}
-							<div class="sm-info__link text-right">
-								<a href="#">{{paymentInformation.link}}</a>
-							</div>
 						</div>
 					</div>
 				</div>

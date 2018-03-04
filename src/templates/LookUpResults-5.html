@@ -1,0 +1,51 @@
+---
+title: Index page
+headingTitle: Lookup results & payments
+footerBack: true
+footerCancel: true
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+
+	{% set paymentInformation = {
+		fields: [
+			{
+				classList: 'form-group_table',
+				label: 'Product',
+				id: 'product',
+				select: {
+					options: [ 'MetroPCS', 'T-Mobile', 'Awesome Provider with long-long-long-long-long-long name', 'MetroPCS', 'T-Mobile', 'Awesome Provider with long-long-long-long-long-long name', 'MetroPCS', 'T-Mobile', 'Awesome Provider with long-long-long-long-long-long name', 'MetroPCS', 'T-Mobile', 'Awesome Provider with long-long-long-long-long-long name', 'MetroPCS', 'T-Mobile', 'Awesome Provider with long-long-long-long-long-long name', 'MetroPCS', 'T-Mobile', 'Awesome Provider with long-long-long-long-long-long name', 'MetroPCS', 'T-Mobile', 'Awesome Provider with long-long-long-long-long-long name', 'MetroPCS', 'T-Mobile', 'Awesome Provider with long-long-long-long-long-long name', 'MetroPCS', 'T-Mobile', 'Awesome Provider with long-long-long-long-long-long name', 'MetroPCS', 'T-Mobile', 'Awesome Provider with long-long-long-long-long-long name', 'MetroPCS', 'T-Mobile', 'Awesome Provider with long-long-long-long-long-long name', 'MetroPCS', 'T-Mobile', 'Awesome Provider with long-long-long-long-long-long name' ]
+				}
+			},
+			{
+				classList: 'form-group_table',
+				label: 'Payment Amount',
+				id: 'payment-amount',
+				input: true,
+				inputAttrs: 'value="10.00"'
+			}
+		]
+	} %}
+	
+	<div class="inner">
+		{% include 'partials/providerChooser/_heading.html' %}
+		<div class="section">
+			<div class="row">
+				<div class="col col_100">
+					<div class="sm-info">
+						<div class="sm-info__title">T-Mobile</div>
+						<div class="sm-info__box">
+							<div class="sm-info__center">
+								{% for item in paymentInformation.fields %}
+									{{mixins.group(item)}}
+								{% endfor %}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

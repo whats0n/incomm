@@ -1,0 +1,47 @@
+<div class="modal modal_md" data-modal="{{item.id}}">
+	<!-- begin modal-content -->
+	<div class="modal-content modal__container" data-modal-container>
+		<div class="modal-content__header">
+			<button class="modal-content__close" data-modal-close>
+				{{mixins.icon('close')}}
+			</button>
+			<h3 class="modal-content__title">Account Data</h3>
+		</div>
+		<div class="modal-content__body" data-scrollbar>
+			<div class="modal-content__body-in">
+				{% for item in [
+					{
+						classList: 'form-group_table',
+						label: 'First Name',
+						id: 'first-name',
+						input: true
+					},
+					{
+						classList: 'form-group_table',
+						label: 'Last Name',
+						id: 'last-name',
+						input: true
+					},
+					{
+						classList: 'form-group_table',
+						label: 'Phone Number',
+						id: 'phone-nmbr',
+						input: true,
+						inputAttrs: 'value="1234567890"',
+						delete: true
+					}
+				] %}
+					{{mixins.group(item)}}
+				{% endfor %}
+				<div class="add-item">
+					<a href="#" class="add-item__link">Add Phone Number</a>
+				</div>
+			</div>
+		</div>
+		<div class="modal-content__footer">
+			<button class="btn btn_red" data-animation="ripple">Close</button>
+			<button class="btn" data-animation="ripple">OK</button>
+		</div>
+	</div>
+	<!-- end modal-content -->
+</div>

@@ -1,0 +1,27 @@
+.add-item
+	display: inline-block
+	vertical-align: top
+	&__link
+		position: relative
+		display: block
+		padding-left: 20px
+		color: $blue
+		font-size: 18px
+		line-height: 1.2
+		text-decoration: underline
+		&:hover
+			text-decoration: none
+		&:before,
+		&:after
+			content: ''
+			position: absolute
+		&:before
+			top: 11px
+			left: 0
+			border-top: 1px solid $blue
+			width: 11px
+		&:after
+			top: 6px
+			left: 5px
+			border-left: 1px solid $blue
+			height: 11px

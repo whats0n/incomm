@@ -1,0 +1,16 @@
+.error-message
+	padding: 4px 7px
+	border: 1px solid $red
+	border-radius: 2px
+	max-width: 100%
+	opacity: 0
+	visibility: hidden
+	color: $white
+	background: $red
+	transition: opacity 0.25s, visibility 0.25s
+	&:before
+		content: ''
+		position: absolute
+		top: 100%
+		left: 15px
+		+arr(12,5,$red,b)

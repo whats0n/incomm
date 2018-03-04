@@ -4,17 +4,23 @@
 
 {% macro group(props) %}
 	<div class="form-group {{props.classList}}">
+		{% if props.delete %}
+			<div class="form-group__delete">
+				<button class="btn-delete" type="button">
+					{{icon('close')}}
+				</button>
+			</div>
+		{% endif %}
 		<label for="{{props.id}}" class="label form-group__label">{{props.label | safe}}</label>
-		{% if props.select %}
-			<div class="form-group__field">
+		<div class="form-group__field">
+			{% if props.select %}
 				{{select(props.select)}}
-			</div>
-		{% endif %}
-		{% if props.input %}
-			<div class="form-group__field">
-				<input type="text" class="input" id="{{props.id}}" {{props.inputAttrs | safe}}>
-			</div>
-		{% endif %}
+			{% endif %}
+			{% if props.input %}
+				<input type="text" class="input {{props.inputClassList}}" id="{{props.id}}" {{props.inputAttrs | safe}}>
+			{% endif %}
+			<div class="error-message form-group__error-message">{{props.errorMessage or 'Lorem ipsum dolor sit amet.'}}</div>
+		</div>
 	</div>
 {% endmacro %}
 

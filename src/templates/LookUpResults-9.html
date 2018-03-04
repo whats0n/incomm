@@ -1,0 +1,72 @@
+---
+title: Index page
+headingTitle: Lookup results & payments
+footerBack: true
+footerCancel: true
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+
+	{% set customerInfo = [
+		{ label: 'Customer Name', value: 'Shiva Krovi' },
+		{ label: 'Account Number', value: '2256814191' },
+		{ label: 'Phone Number', value: '1234567890' },
+		{ label: 'ZIP Code', value: '33967' },
+		{ label: 'Product Code', value: '30940' }
+	] %}
+	
+	<div class="inner">
+		{% include 'partials/providerChooser/_heading.html' %}
+		<div class="section">
+			<div class="row row_flex">
+				<div class="col col_50">
+					<div class="sm-info col_in">
+						<div class="sm-info__title">Customer inforamtion</div>
+						<div class="sm-info__box">
+							<ul class="details">
+								{% for item in customerInfo %}
+									<li class="details__item">
+										<div class="details__label">{{item.label | safe}}</div>
+										<div class="details__value">{{item.value | safe}}</div>
+									</li>
+								{% endfor %}
+							</ul>
+							<div class="sm-info__link sm-info__link_gap">
+								<a href="#">Update Account</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col col_50">
+					<div class="sm-info col_in">
+						<div class="sm-info__title">Payment information</div>
+						<div class="sm-info__box">
+							{% for item in range(0,2) %}
+								<div class="sm-info__container">
+									{{mixins.group({
+										classList: 'form-group_table form-group_sm',
+										label: 'FPL $',
+										id: 'fpl-' + loop.index,
+										input: true,
+										inputClassList: 'input_sm',
+										inputAttrs: 'value="0.00"'
+									})}}
+									{{mixins.group({
+										classList: 'form-group_table form-group_sm',
+										label: 'Fee Amount $',
+										id: 'fee-amount-' + loop.index,
+										input: true,
+										inputClassList: 'input_sm',
+										inputAttrs: 'value="2.00" disabled'
+									})}}
+								</div>
+							{% endfor %}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

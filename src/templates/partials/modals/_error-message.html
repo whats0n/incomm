@@ -1,0 +1,21 @@
+<div class="modal modal_sm" data-modal="{{item.id}}">
+	<!-- begin modal-content -->
+	<div class="modal-content modal__container" data-modal-container>
+		<div class="modal-content__header">
+			<button class="modal-content__close" data-modal-close>
+				{{mixins.icon('close')}}
+			</button>
+			<h3 class="modal-content__title">Message from webpage</h3>
+		</div>
+		<div class="modal-content__body" data-scrollbar>
+			<div class="alert">
+				{{mixins.icon('attention', 'alert__icon')}}
+				<p>Creation of the product faild.</p>
+			</div>
+		</div>
+		<div class="modal-content__footer">
+			<button class="btn" data-animation="ripple">OK</button>
+		</div>
+	</div>
+	<!-- end modal-content -->
+</div>

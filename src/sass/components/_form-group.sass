@@ -1,6 +1,10 @@
 .form-group
+	position: relative
 	&:not(:last-child)
 		margin-bottom: 20px
+	&_sm 
+		&:not(:last-child)
+			margin-bottom: 10px
 	&_inline,
 	&_table
 		display: flex
@@ -11,6 +15,12 @@
 			&__field
 				flex-grow: 1
 				min-width: 0
+			&__delete
+				position: absolute
+				top: 0
+				right: 0
+				~ .form-group__field
+					padding-right: 60px
 	&_inlune
 		.form-group
 			&__field
@@ -19,8 +29,16 @@
 		.form-group
 			&__label 
 				flex-grow: 1
-				width: 30%
+				width: 33%
 			&__field
-				width: 60%
+				width: 57%
 	&__label
 		padding: 10px 0
+	&__field 
+		position: relative
+	&__error-message
+		position: absolute
+		z-index: 10
+		left: 0
+		bottom: 100%
+		margin-bottom: 6px
