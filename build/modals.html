@@ -88,9 +88,9 @@
 			</button>
               <h3 class="modal-content__title">Payment History</h3>
             </div>
-            <div class="modal-content__body" data-scrollbar>
-              <div class="modal-content__body-in">
-                <div class="modal-content__date-form"> <label for="payment-history-from" class="label modal-content__subtitle">Please select period.</label>
+            <div class="modal-content__body history" data-scrollbar>
+              <div class="modal-content__body-in history__inner">
+                <div class="modal-content__date-form history__header"> <label for="payment-history-from" class="label modal-content__subtitle">Please select period.</label>
                   <div class="date-form">
                     <div class="date-form__col"> <label for="payment-history-from" class="date-form__label">From</label>
                       <div class="date-form__field" data-datepicker> <input type="text" class="input" id="payment-history-from" data-datepicker-input>
@@ -257,9 +257,9 @@
                     <div class="date-form__submit"> <button class="btn" data-animation="ripple">Request</button> </div>
                   </div>
                 </div>
-                <div class="modal-content__table" data-scrollbar>
+                <div class="modal-content__table history__body">
                   <!-- begin table -->
-                  <div class="table">
+                  <div class="table history__table">
                     <div class="table__thead">
                       <div class="table__tr">
                         <div class="table__th" data-column="history-date">Date</div>

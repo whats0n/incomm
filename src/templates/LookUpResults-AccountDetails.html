@@ -1,0 +1,144 @@
+---
+title: Index page
+headingTitle: Lookup results & payments
+footerBack: true
+footerCancel: true
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+
+	{% set customerInfo = [
+		{ label: 'Account Number', value: '613410674' },
+		{ label: 'Phone Number', value: '2146641470' },
+		{ label: 'Customer Name', value: 'TEST SOASUB' },
+		{ label: 'Current Balance', value: '0.00' },
+		{ label: 'Past Due Balance', value: '0.00' },
+		{ label: 'Due Date', value: '12/21/2016' },
+		{ label: 'Last Payment Date', value: '1/1/0001' },
+		{ label: 'Past Payment Account', value: '0.00' },
+		{ label: 'Can Create Customer Account', value: 'false' },
+		{ label: 'Subscribers', value: '' },
+		{ label: 'Provider Id', value: '10113' },
+		{ label: 'Provider Name', value: 'MetroPCS' },
+		{ label: 'Tag Index', value: 'MonthlyService' },
+		{ label: '<a href="#">Plan Details</a>', value: '' }
+	] %}
+
+	{% set paymentInformation = {
+		fields: [
+			{
+				classList: 'form-group_table',
+				label: 'Service Payment&nbsp;$',
+				id: 'service-payment',
+				input: true
+			},
+			{
+				classList: 'form-group_table',
+				label: 'Fee Amount $',
+				id: 'service-payment-fee-amount',
+				input: true,
+				inputAttrs: 'value="3.00" disabled'
+			},
+			{
+				classList: 'form-group_table',
+				label: 'MetroConnect $',
+				id: 'MetroConnect',
+				input: true,
+				inputAttrs: 'value="0.00"'
+			},
+			{
+				classList: 'form-group_table',
+				label: 'Fee Amount $',
+				id: 'MetroConnect-fee-amount',
+				input: true,
+				inputAttrs: 'value="0.00" disabled'
+			}
+		],
+		link: 'Check upgrade eligibility'
+	} %}
+	
+	<div class="inner">
+		{% include 'partials/providerChooser/_heading.html' %}
+		<div class="section">
+			<div class="account">
+				<div class="account-details">
+					<div class="account-details__col">
+						<div class="account-details__title">Billing Account ID</div>
+						<div class="account-details__value">0250002693</div>
+					</div>
+					<div class="account-details__col">
+						<div class="account-details__title">Account Status</div>
+						<div class="account-details__status">Dummy_Account</div>
+					</div>
+				</div>
+				<div class="account__items">
+					{% for item in range(0,3) %}
+						<div class="account__item js-account-item">
+							<div class="account__number">
+								<div class="account__number-in">{{loop.index}}</div>
+							</div>
+							<div class="account__body">
+								<div class="account__col account__phone">
+									<div class="account__title">Phone Number</div>
+									<div class="account__value">(954) 334-9422</div>
+								</div>
+								<div class="account__col account__esn">
+									<div class="account__title">ESN</div>
+									<div class="account__value">9572</div>
+								</div>
+								<div class="account__col account__zip">
+									<div class="account__title">Zip</div>
+									<div class="account__value">33178</div>
+								</div>
+								<div class="account__col account__status">
+									<div class="account__title">Status</div>
+									<div class="account__value">ACTIVE</div>
+								</div>
+								<div class="account__col account__plan">
+									<div class="account__title">Plan</div>
+									<div class="account__value">Simple Mobile (RTR) - $60 UNL (30Day) + ILD Open</div>
+								</div>
+								<div class="account__footer">
+									<button class="account__edit js-account-control">
+										{{mixins.icon('edit', 'account__edit-icon')}}
+										<span class="account__edit-title">edit plan</span>
+									</button>
+								</div>
+								<div class="account__form js-account-container">
+									<div class="account__col account__col_md">
+										{{mixins.group({
+											classList: 'form-group_column',
+											label: 'Select new plan',
+											id: loop.index + '-select-new-plan',
+											select: {
+												options: [ 'Simple Mobile', 'Simple Mobile 1', 'Simple Mobile 2', 'Simple Mobile 3' ]
+											}
+										})}}
+									</div>
+									<div class="account__col account__col_md">
+										{{mixins.group({
+											classList: 'form-group_column',
+											label: 'Phone Number',
+											input: true,
+											id: loop.index + '-phone-number'
+										})}}
+									</div>
+									<div class="account__col account__col_md">
+										{{mixins.group({
+											classList: 'form-group_column',
+											label: 'Zip Code',
+											input: true,
+											id: loop.index + '-zip-code'
+										})}}
+									</div>
+								</div>
+							</div>
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}
