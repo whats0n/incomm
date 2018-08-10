@@ -1,0 +1,21 @@
+.btn-link
+	display: inline-block
+	vertical-align: top
+	color: $blue
+	background: none !important
+	+f(16px, 400, 1.3)
+	transition: color 0.175s
+	&:active
+		color: darken($blue, 10%)
+	&__icon 
+		margin-right: 0.25em
+		fill: currentColor
+		font-size: 1.25em
+		&.icon-close
+			font-size: 0.8em
+		&.icon-reload
+			font-size: 1em
+	&__icon,
+	&__title
+		display: inline-block
+		vertical-align: middle

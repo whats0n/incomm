@@ -100,9 +100,9 @@ footerCancel: true
 									<div class="account__value">Simple Mobile (RTR) - $60 UNL (30Day) + ILD Open</div>
 								</div>
 								<div class="account__footer">
-									<button class="account__edit js-account-control">
-										{{mixins.icon('edit', 'account__edit-icon')}}
-										<span class="account__edit-title">edit plan</span>
+									<button class="btn-link account__btn js-account-control">
+										{{mixins.icon('edit', 'btn-link__icon')}}
+										<span class="btn-link__title">edit plan</span>
 									</button>
 								</div>
 								<div class="account__form js-account-container">
@@ -131,6 +131,16 @@ footerCancel: true
 											input: true,
 											id: loop.index + '-zip-code'
 										})}}
+									</div>
+									<div class="account__col account__col_wide">
+										<button class="btn-link account__btn js-account-control">
+											{{mixins.icon('reload', 'btn-link__icon')}}
+											<span class="btn-link__title">update plan</span>
+										</button>
+										<button class="btn-link account__btn js-account-control">
+											{{mixins.icon('close', 'btn-link__icon')}}
+											<span class="btn-link__title">cancel</span>
+										</button>
 									</div>
 								</div>
 							</div>

@@ -175,6 +175,12 @@ a:not([class]):hover {
   fill: initial;
 }
 
+.icon-reload {
+  width: 1em;
+  height: 1em;
+  fill: #030104;
+}
+
 .icon-right {
   width: 0.62em;
   height: 1em;
@@ -1824,7 +1830,19 @@ body {
   padding: 10px 10px 0;
 }
 
-.account__edit {
+.account__form {
+  display: none;
+}
+
+.account__form.is-active {
+  display: block;
+}
+
+.account__btn {
+  margin-right: 20px;
+}
+
+.btn-link {
   display: inline-block;
   vertical-align: top;
   color: #2e99db;
@@ -1835,30 +1853,27 @@ body {
   transition: color 0.175s;
 }
 
-.account__edit:active {
+.btn-link:active {
   color: #1f7db7;
 }
 
-.account__edit-icon {
+.btn-link__icon {
+  margin-right: 0.25em;
   fill: currentColor;
   font-size: 1.25em;
 }
 
-.account__edit-icon, .account__edit-title {
+.btn-link__icon.icon-close {
+  font-size: 0.8em;
+}
+
+.btn-link__icon.icon-reload {
+  font-size: 1em;
+}
+
+.btn-link__icon, .btn-link__title {
   display: inline-block;
   vertical-align: middle;
-}
-
-.account__edit-title {
-  padding-left: 0.25em;
-}
-
-.account__form {
-  display: none;
-}
-
-.account__form.is-active {
-  display: block;
 }
 
 @media (prefers-reduced-motion: reduce) {
