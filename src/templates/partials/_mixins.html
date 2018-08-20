@@ -38,6 +38,7 @@
 	</div>#}
 	<div class="my-select">
 		<select class="js-select" {% if props.placeholder %}data-placeholder="{{props.placeholder}}"{% endif %}>
+			{% if props.placeholder %} <option></option> {% endif %}
 			{% for item in props.options %}
 				<option value="{{item}}">{{item}}</option>
 			{% endfor %}

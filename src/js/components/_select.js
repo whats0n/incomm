@@ -72,6 +72,7 @@ $('.js-select').each((i, select) => {
   select.select2({
     minimumResultsForSearch: -1,
     dropdownParent: select.parent(),
-    width: '100%'
+    width: '100%',
+    placeholder: placeholder
   });
 });
