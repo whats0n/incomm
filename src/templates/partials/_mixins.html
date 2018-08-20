@@ -25,7 +25,7 @@
 {% endmacro %}
 
 {% macro select(props) %}
-	<div class="select" data-select>
+	{#<div class="select" data-select>
 		{{icon('down', 'select__arrow')}}
 		<div class="select__value" data-select-value>{{props.placeholder or props.options[0]}}</div>
 		<div class="select__dropdown" data-select-dropdown data-scrollbar>
@@ -35,6 +35,14 @@
 				{% endfor %}
 			</ul>
 		</div>
+	</div>#}
+	<div class="my-select">
+		<select class="js-select" {% if props.placeholder %}data-placeholder="{{props.placeholder}}"{% endif %}>
+			{% for item in props.options %}
+				<option value="{{item}}">{{item}}</option>
+			{% endfor %}
+		</select>
+		{{icon('down', 'my-select__arrow')}}
 	</div>
 {% endmacro %}
 
