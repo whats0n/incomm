@@ -1282,7 +1282,8 @@ body {
 }
 
 html,
-body {
+body,
+#root {
   height: 100%;
 }
 
@@ -2217,6 +2218,16 @@ body {
   visibility: hidden;
   background: rgba(51, 51, 51, 0.9);
   transition: opacity 0.3s, visibility 0.3s;
+  text-align: center;
+  font-size: 0;
+}
+
+.modal:before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  width: 0;
+  height: 100%;
 }
 
 .modal.is-open {
@@ -2233,12 +2244,11 @@ body {
 }
 
 .modal__container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
+  display: inline-block;
+  vertical-align: middle;
   width: calc(100% - 40px);
   max-width: 980px;
-  transform: translate3d(-50%, -50%, 0);
+  text-align: left;
 }
 
 [data-modal-target],
