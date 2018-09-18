@@ -80,6 +80,11 @@ a {
   text-decoration: none;
 }
 
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
 a:not([class]) {
   color: #2e99db;
   text-decoration: underline;
